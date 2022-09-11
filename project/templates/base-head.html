@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{job.title}} Shoghl</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'images/logo-shoghl.png' %}"
+    />
+
+    <!-- Main css file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Font awesome css -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="start-div">
+          <i class="fa fa-list menu-btn" id="menu-btn"></i>
+          <div class="menu" id="menu">
+            <i class="fa fa-times" id="close-menu"></i>
+            <div class="search-box">
+              <input
+                type="search"
+                name="search"
+                id="search-inp"
+                placeholder="search for job....."
+              />
+              <i class="fa fa-search"></i>
+            </div>
+            <a href="{% url 'accounts:main' %}">Home</a>
+            <a href="{% url 'jobs:jobs' %}">jobs</a>
+            <a href="{% url 'jobs:jobs' %}">contact</a>
+          </div>
+          <div class="logo">
+            <a href="{% url 'accounts:main' %}" class="logo-link">
+              <i class="fas fa-paper-plane"></i>
+              <h1>Sho<span>ghl</span></h1>
+            </a>
+          </div>
+        </div>
+        <div class="mid-div">
+          <div class="search-box">
+            <input
+              type="search"
+              name="search"
+              id="search-inp"
+              placeholder="search for job....."
+            />
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <div class="end-div">
+          {% if user.is_authenticated %}
+            {% if user.first_name != '' %}
+              <a href="{% url 'accounts:main' %}" class="signup-btn">{{user.first_name}} {{user.last_name}}</a>
+              <a href="{% url 'accounts:logout' %}" class="login-btn"><i class="fa fa-outline-icons"></i> logout</a>
+            {% else %}
+              <a href="{% url 'accounts:main' %}" class="signup-btn">{{user.username}}</a>
+            {% endif %}
+          {% else %}
+            <a href="{% url 'accounts:login' %}" class="login-btn">login</a>
+            <a href="{% url 'accounts:signup' %}" class="signup-btn">signup</a>
+          {% endif %}
+          
+        </div>
+      </div>
+    </header>
+
+    {% block content %} {% endblock content %}
+
+    <footer>
+      <div class="container">
+        <div class="logo-side side">
+          <div class="logo">
+            <a href="{% url 'accounts:main' %}" class="logo-link">
+              <i class="fas fa-paper-plane"></i>
+              <h1>Sho<span>ghl</span></h1>
+            </a>
+          </div>
+          <div class="contact-way">
+            <div class="way">
+              <i class="fab fa-google"></i>
+              <span>abdo.morsy.2722002@gmail.com</span>
+            </div>
+            <div class="way">
+              <i class="fab fa-whatsapp"></i>
+              <span>+20-010-6200-4365</span>
+            </div>
+            <div class="way">
+              <i class="fa fa-map-marker-alt"></i>
+              <span>Cairo,Egypt</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-side side">
+          <h2>Category</h2>
+          <ul>
+            <li><a href="jobs.html">Computer Science</a></li>
+            <li><a href="jobs.html">Design & Art</a></li>
+            <li><a href="jobs.html">Accounting</a></li>
+            <li><a href="jobs.html">Management</a></li>
+            <li><a href="jobs.html">Call Center</a></li>
+          </ul>
+        </div>
+        <div class="location-side side">
+          <h2>Location</h2>
+          <ul>
+            <li><a href="jobs.html">Cairo</a></li>
+            <li><a href="jobs.html">Banha</a></li>
+            <li><a href="jobs.html">Giza</a></li>
+            <li><a href="jobs.html">Egypt</a></li>
+            <li><a href="jobs.html">KSA</a></li>
+          </ul>
+        </div>
+        <div class="career-level-side side">
+          <h2>Career Level</h2>
+          <ul>
+            <li><a href="jobs.html">Student</a></li>
+            <li><a href="jobs.html">Entry Level</a></li>
+            <li><a href="jobs.html">Junior</a></li>
+            <li><a href="jobs.html">Senior</a></li>
+            <li><a href="jobs.html">Manager</a></li>
+          </ul>
+        </div>
+        <div class="follow-us-side">
+          <h1>Follow US :</h1>
+          <ul>
+            <li>
+              <a href="facebook.com"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="facebook.com"><i class="fab fa-youtube"></i></a>
+            </li>
+            <li>
+              <a href="facebook.com"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="facebook.com"><i class="fab fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

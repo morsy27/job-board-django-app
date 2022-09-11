@@ -1,0 +1,202 @@
+{% extends 'base-head.html' %} {% block content %}
+<div class="jobs">
+  <div class="search-details">
+    <h1 class="search-word">Front End Developer</h1>
+    <p class="jobs-found"><span>120</span> Jobs avilable</p>
+  </div>
+
+  <div class="jobs-page-cont">
+    <div class="filter-side">
+      <div class="filter-content">
+        <h1>Filter</h1>
+        <div class="filter-count">
+          <p class="pcount"><span> 0 </span>filter selected</p>
+          <a href="#" class="clearallfilter">clear all filter</a>
+        </div>
+
+        <div class="filter-options">
+          <div class="option">
+            <div class="option-show" id="categorymenubtn">
+              <h3>Category</h3>
+              <i class="fa fa-sort-down"></i>
+            </div>
+
+            <ul class="option-menu" id="categorymenu">
+              <li>
+                <input
+                  type="checkbox"
+                  name="webdevelop"
+                  id="webdevelop"
+                /><label for="webdevelop">Web Develop</label>
+              </li>
+              <li>
+                <input type="checkbox" name="designart" id="designart" /><label
+                  for="designart"
+                  >Design & Art</label
+                >
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  name="accounting"
+                  id="accounting"
+                /><label for="accounting">Accounting</label>
+              </li>
+              <li>
+                <input type="checkbox" name="android" id="android" /><label
+                  for="android"
+                  >Android</label
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="option">
+            <div class="option-show" id="locationmenubtn">
+              <h3>Location</h3>
+              <i class="fa fa-sort-down"></i>
+            </div>
+
+            <ul class="option-menu" id="locationmenu">
+              <li>
+                <input type="checkbox" name="cairo" id="cairo" /><label
+                  for="cairo"
+                  >Cairo</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" name="giza" id="giza" /><label for="giza"
+                  >Giza</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" name="banha" id="banha" /><label
+                  for="banha"
+                  >Banha</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" name="ksa" id="ksa" /><label for="ksa"
+                  >KSA</label
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="option">
+            <div class="option-show" id="careerlevelmenubtn">
+              <h3>Career Level</h3>
+              <i class="fa fa-sort-down"></i>
+            </div>
+
+            <ul class="option-menu" id="careerlevelmenu">
+              <li>
+                <input type="checkbox" name="student" id="student" /><label
+                  for="student"
+                  >Student</label
+                >
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  name="entrylevel"
+                  id="entrylevel"
+                /><label for="entrylevel">Entrylevel</label>
+              </li>
+              <li>
+                <input type="checkbox" name="junior" id="junior" /><label
+                  for="junior"
+                  >Junior</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" name="senior" id="senior" /><label
+                  for="senior"
+                  >Senior</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" name="manager" id="manager" /><label
+                  for="manager"
+                  >Manager</label
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="option">
+            <div class="option-show" id="jobtypemenubtn">
+              <h3>Job Type</h3>
+              <i class="fa fa-sort-down"></i>
+            </div>
+
+            <ul class="option-menu" id="jobtypemenu">
+              <li>
+                <input
+                  type="checkbox"
+                  name="webdevelop"
+                  id="webdevelop"
+                /><label for="webdevelop">Full Time</label>
+              </li>
+              <li>
+                <input type="checkbox" name="designart" id="designart" /><label
+                  for="designart"
+                  >Part Time</label
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jobs-side">
+      <div class="jobs-search">
+        <input
+          type="search"
+          name="job-search"
+          id="job-search-box"
+          placeholder="Search here ..."
+        />
+        <a href="jobs.html">Search</a>
+      </div>
+      <div class="jobs-container">
+        <div class="job-box">
+          {% for job in jobs %}
+          <div class="job">
+            <a href="company-page.html" target="_blank"
+              ><img src="{{job.image.url}}" alt="company logo"
+            /></a>
+            <div class="content">
+              <a href="{% url 'jobs:job_details' job.id %}">{{job.title}}</a>
+              <i class="fa fa-map-marker-alt"></i>
+              <spam>Cairo,Egypt</spam>
+              <i class="fa fa-clock"></i>
+              <spam>{{job.job_type}}</spam>
+            </div>
+            <div class="apply-part">
+              <a href="job-details.html" class="apply-btn">Apply Now</a>
+              <i class="fa fa-clock"></i>
+              <spam>{{job.published_at|date:'d M Y'}}</spam>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="pagnition">
+          <ul>
+            <li>
+              <a href="#"> <i class="fa fa-arrow-left"></i> </a>
+            </li>
+            <li>
+              <a href="#"><span>01</span></a>
+            </li>
+            <li>
+              <a href="#"><span>02</span></a>
+            </li>
+            <li>
+              <a href="#"> <i class="fa fa-arrow-right"></i> </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %} {% block content %}
+<div class="signup-page" style = "height : fit-content">
+  <div class="logo-txt">
+    <a href="{% url 'accounts:main' %}" class="logo-link">
+      <i class="fas fa-paper-plane"></i>
+      <h1>Sho<span>ghl</span></h1>
+    </a>
+  </div>
+  <div class="signup-cont" style = "height : fit-content">
+    <form method="POST" class="signup-form">
+      {% csrf_token %}
+      <h1>signup</h1>
+
+      <div style="width: 50%%; display: block; text-align:center; align-item:center;">
+        {% if form.errors %} 
+          {% for field in form %} 
+            {% for error in field.errors %}
+              <div style="width: 100%; background: rgb(230, 83, 83); text-align:center; align-item:center; font-size:var(--small-font-size);padding: 10px 20px; border-radius:5px">
+                <strong>{{ error|escape }}</strong>
+              </div>
+            {% endfor %} 
+          {% endfor %} 
+          {% for error in form.non_field_errors %}
+            <div style="width: 100%; background: rgb(230, 83, 83); text-align:center; align-item:center; font-size:var(--small-font-size);padding: 10px 20px; border-radius:5px">
+              <strong>{{ error|escape }}</strong>
+            </div>
+          {% endfor %} 
+        {% endif %}
+      </div>
+
+      <div class="name-box">
+        <div class="inp fname-box">
+          <label for="fname-signup">Frist Name</label>
+          {{form.first_name}}
+        </div>
+        <div class="inp lname-box">
+          <label for="lname-signup">Last Name</label>
+          {{form.last_name}}
+        </div>
+      </div>
+      {% comment %} {% if form.first_name.errors or form.last_name.errors %}
+        {% for error in form.first_name.errors %}
+          <div style="width: 50%; background: rgb(230, 83, 83); text-align:center; align-item:center; font-size:var(--small-font-size);padding: 10px 20px; border-radius:5px">
+            <strong>{{ error|escape }}</strong>
+          </div>
+        {% endfor %} 
+        {% for error in form.last_name.errors %}
+          <div style="width: 50%; background: rgb(230, 83, 83); text-align:center; align-item:center; font-size:var(--small-font-size);padding: 10px 20px; border-radius:5px">
+            <strong>{{ error|escape }}</strong>
+          </div>
+        {% endfor %} 
+      {% endif %} {% endcomment %}
+
+      <div class="inp email-box">
+        <label for="email-signup">Email Address</label>
+        {{form.email}}
+      </div>
+      {% comment %} {% if form.email.errors %}
+        {% for error in form.email.errors %}
+          <div style="width: 50%; background: rgb(230, 83, 83); text-align:center; align-item:center; font-size:var(--small-font-size);padding: 10px 20px; border-radius:5px">
+            <strong>{{ error|escape }}</strong>
+          </div>
+        {% endfor %} 
+      {% endif %} {% endcomment %}
+      <div class="inp email-box">
+        <label for="username-signup">username</label>
+        {{form.username}}
+      </div>
+      {% comment %} {% if form.username.errors %}
+        {% for error in form.username.errors %}
+          <div style="width: 50%; background: rgb(230, 83, 83); text-align:center; align-item:center; font-size:var(--small-font-size);padding: 10px 20px; border-radius:5px">
+            <strong>{{ error|escape }}</strong>
+          </div>
+        {% endfor %} 
+      {% endif %} {% endcomment %}
+      <div class="inp password-box">
+        <label for="password-signup">Password</label>
+        {{form.password1}}
+      </div>
+      {% comment %} {% if form.password1.errors %}
+        {% for error in form.password1.errors %}
+          <div style="width: 50%; background: rgb(230, 83, 83); text-align:center; align-item:center; font-size:var(--small-font-size);padding: 10px 20px; border-radius:5px">
+            <strong>{{ error|escape }}</strong>
+          </div>
+        {% endfor %} 
+      {% endif %} {% endcomment %}
+      <div class="inp password-box">
+        <label for="password-signup">Password</label>
+        {{form.password2}}
+      </div>
+      {% comment %} {% if form.password2.errors %}
+        {% for error in form.password2.errors %}
+          <div style="width: 50%; background: rgb(230, 83, 83); text-align:center; align-item:center; font-size:var(--small-font-size);padding: 10px 20px; border-radius:5px">
+            <strong>{{ error|escape }}</strong>
+          </div>
+        {% endfor %} 
+      {% endif %} {% endcomment %}
+      <div class="terms">
+        {{form.check}}
+        <label for="agreeterms"
+          >I agree to the <a href="#">terms & conditions</a></label
+        >
+      </div>
+      {% comment %} {% if form.check.errors %}
+        {% for error in form.check.errors %}
+          <div style="width: 50%; background: rgb(230, 83, 83); text-align:center; align-item:center; font-size:var(--small-font-size);padding: 10px 20px; border-radius:5px">
+            <strong>{{ error|escape }}</strong>
+          </div>
+        {% endfor %} 
+      {% endif %} {% endcomment %}
+
+      <button>Create New account</button>
+
+      <div class="login-now">
+        <h3>Already on Shoghl ? <a href="{% url 'accounts:login' %}">click here</a></h3>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %} {% comment %}
+<form action="" method="post">
+  {% csrf_token %} {{form.as_p}}
+  <input type="submit" name="Create User" />
+</form>
+{% endcomment %}

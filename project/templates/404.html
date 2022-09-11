@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block content %}
+<div
+  style="
+    width: 100%;
+    display: flex;
+    justify-self: space-between;
+    align-items: center;
+    text-align: center;
+  "
+>
+  <div class="start-div">
+    <div
+      style="
+        display: flex;
+        justfy-content: center;
+        align-items: center;
+        text-align: center;
+      "
+    >
+      <a href="{% url 'accounts:main' %}" class="logo-link">
+        <i
+          class="fas fa-paper-plane"
+          style="font-size: var(--h1-font-size); color: var(--green)"
+        ></i>
+        <h1 style="font-size: var(--h1-font-size); color: var(--black)">
+          Sho<span style="font-size: var(--h1-font-size); color: var(--green)"
+            >ghl</span
+          >
+        </h1>
+      </a>
+    </div>
+  </div>
+  <div
+    style="
+      width: 100%;
+      padding: 20px 200px;
+      justfy-content: center;
+      align-items: center;
+      text-align: center;
+    "
+  >
+    <h1>Ooops!</h1>
+    <h1 style="font-size: var(--biggest-font-size)">
+      404 <span style="color: red">Error</span>
+    </h1>
+  </div>
+</div>
+
+{% endblock content %}

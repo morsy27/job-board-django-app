@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+<div class="login-page">
+  <div class="logo-txt">
+    <a href="index.html" class="logo-link">
+      <i class="fas fa-paper-plane"></i>
+      <h1>Sho<span>ghl</span></h1>
+    </a>
+  </div>
+  <div
+    class="login-cont"
+    style="
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      width: fit-content;
+      height: fit-content;
+    "
+  >
+    <a
+      href="{% url 'accounts:main' %}"
+      style="
+        padding: 10px 20px;
+        font-size: var(--h3-font-size);
+        background: var(--green);
+        color: #fff;
+        margin: 30px;
+        border-radius: 10px;
+      "
+      >Home</a
+    >
+    <a
+      href="{% url 'accounts:login' %}"
+      style="
+        padding: 10px 20px;
+        font-size: var(--h3-font-size);
+        background: var(--green);
+        color: #fff;
+        margin: 30px;
+        border-radius: 10px;
+      "
+      >Log in</a
+    >
+  </div>
+</div>
+{% endblock content %}

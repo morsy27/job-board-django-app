@@ -1,0 +1,198 @@
+{% extends 'base-head.html' %} {% block content %}
+<div class="job-details">
+  <div class="job-left-side">
+    <div class="box job-details-part">
+      <div class="job-details-side">
+        <div class="job-details-text">
+          <h2>{{job.title}}</h2>
+          <samp>{{job.job_type}}</samp>
+          <h3>Eduland<i class="fa fa-check-circle"></i></h3>
+          <p>posted <span>{{job.published_at|date:'d M Y'}}</span></p>
+        </div>
+        <div class="job-details-img">
+          <img src="{{job.image.url}}" alt="company logo" />
+        </div>
+      </div>
+      <div class="job-apply-part">
+        <div class="apply-info">
+          <h3>
+            <span>16</span
+            ><samp>application for <small>1</small> position</samp>
+          </h3>
+        </div>
+        <div class="apply-btn-part">
+          <a href="#applysec" class="apply-btn">Apply Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="box job-description">
+      <h1>Job Description</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+        magnam exercitationem assumenda earum, nostrum nulla molestias, corporis
+        facere necessitatibus deleniti adipisci in doloribus quod et rerum
+        recusandae! Eius numquam saepe molestiae iusto veritatis, corporis
+        facere necessitatibus deleniti adipisci in doloribus quod et rerum
+        recusandae! Eius numquam saepe molestiae iusto veritatis,molestiae iusto
+        veritatis, corporis facere necessitatibus deleniti adipisci in doloribus
+        quod et rerum recusandae! Eius numquam saepe nostrum nulla. molestias,
+        corporis facere necessitatibus deleniti adipisci in doloribus quod et
+        rerum recusandae! Eius numquam saepe molestiae iusto veritatis, nostrum
+        nulla molestias, deleniti adipisci in doloribus quod et rerum
+        recusandae! Eius numquam saepe molestiae iusto veritatis,sad blanditiis
+        beatae ullam quas ab eligendi provident earum neque sapiente ad aliquid,
+        delectus laborum at illo sunt!
+      </p>
+    </div>
+    <div class="box job-requirment">
+      <h1>Job Requirment</h1>
+      <div class="skills">
+        <h2>Skills and Qualifications</h2>
+        <ul>
+          <li>
+            <i class="fa fa-dot-circle"></i>Good knowledge in HTML, CSS, jQuery
+            and Javascript
+          </li>
+          <li>
+            <i class="fa fa-dot-circle"></i>Ability to multitask and be
+            resourceful in a fast paced environment
+          </li>
+          <li>
+            <i class="fa fa-dot-circle"></i>Passion for creating exceptional UX,
+            attention to detail
+          </li>
+          <li>
+            <i class="fa fa-dot-circle"></i>Collaborative can-do attitude,
+            initiative and drive to learn
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box apply-sec" id="applysec">
+      <h1>Apply for the job</h1>
+      <form action="">
+        <div class="row">
+          <div class="name-mail">
+            <div class="input-name-field">
+              <input type="text" placeholder="Your name" required />
+            </div>
+
+            <div class="input-email-field">
+              <input type="email" placeholder="Email" required />
+            </div>
+          </div>
+
+          <div class="input-site-field">
+            <input type="text" placeholder="Website/Portfolio link" />
+          </div>
+          <div class="custom-file-input">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="inputGroupFile03"
+              aria-describedby="inputGroupFileAddon03"
+              required
+            />
+            <label class="custom-file-label" for="inputGroupFile03"
+              >Upload CV</label
+            >
+          </div>
+
+          <div class="input-letter-field">
+            <textarea
+              name="#"
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Coverletter"
+              required
+            ></textarea>
+          </div>
+          <div class="submit-apply-btn">
+            <button type="submit">Apply Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="job-right-side">
+    <div class="box about-company">
+      <h3>About <span>Eduland</span></h3>
+      <ul>
+        <li><i class="fa fa-circle-notch"></i>Software Company</li>
+        <li><i class="fa fa-circle-notch"></i>cairo,Egypt</li>
+        <li><i class="fa fa-circle-notch"></i>15,000 Employee</li>
+        <li>
+          <i class="fa fa-circle-notch"></i
+          ><a href="#">Browse all vacancies at <span>Eduland</span></a>
+        </li>
+        <li>
+          <i class="fa fa-circle-notch"></i>We provide online instant cash loans
+          with quick approval that suit your term length.
+        </li>
+      </ul>
+    </div>
+    <div class="box job-summary">
+      <h3>Job Summary</h3>
+      <ul>
+        <li>
+          <i class="fa fa-circle-notch"></i> Experience Needed :
+          <span>1 to 4 years</span>
+        </li>
+        <li>
+          <i class="fa fa-circle-notch"></i> Vacancy :
+          <span> 1 position</span>
+        </li>
+        <li>
+          <i class="fa fa-circle-notch"></i> Salary :
+          <span>12k per month</span>
+        </li>
+        <li>
+          <i class="fa fa-circle-notch"></i> Career Level :
+          <span>junior</span>
+        </li>
+        <li>
+          <i class="fa fa-circle-notch"></i> Education Level:
+          <span>Bachelor's Degree</span>
+        </li>
+        <li>
+          <i class="fa fa-circle-notch"></i> Location :
+          <span>Cairo,Egypt</span>
+        </li>
+        <li>
+          <i class="fa fa-circle-notch"></i> Job type :
+          <span>full-time</span>
+        </li>
+        <li>
+          <i class="fa fa-circle-notch"></i> published at :
+          <span>25,nov,2022</span>
+        </li>
+      </ul>
+    </div>
+    <div class="box share-job-at">
+      <h4>share at :</h4>
+      <ul>
+        <li>
+          <a href="http://facebook.com" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+        </li>
+        <li>
+          <a href="http://twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a href="http://linkedin.com" target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" target="_blank"><i class="fa fa-copy"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock content %}
